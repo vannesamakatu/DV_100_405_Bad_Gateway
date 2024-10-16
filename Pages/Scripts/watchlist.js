@@ -16,18 +16,35 @@ $(document).ready(function() {
         $.getJSON(apiUrl, function(json) {
             console.log('Movies:', json); // Log the movies response
             if (json.results.length > 0) {
-                $('#poster').empty();
+                $('#poster-4').empty();
+                $('#poster-20').empty();
                 
-                let randomMovies = json.results.sort(() => 0.5 - Math.random()).slice(0, 4);
+                let randomMovies4 = json.results.sort(() => 0.5 - Math.random()).slice(0, 4);
+                let randomMovies20 = json.results.sort(() => 0.5 - Math.random()).slice(0, 20);
 
-                randomMovies.forEach(function(movie) {
+                randomMovies4.forEach(function(movie) {
                     if (movie.poster_path) {
-                        $('#poster').append(
+                        $('#poster-4').append(
                             `<div class="movie-card">
                                 <img src="http://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-responsive" alt="${movie.title}" />
                                 <p><strong>${movie.title}</strong></p>
                                 <div class="info-buttons">
-                                    <span class="button">Rating: ${movie.vote_average|| 'N/A'}</span>
+                                    <span class="button">Rating: ${movie.vote_average || 'N/A'}</span>
+                                    <span class="button">Year: ${new Date(movie.release_date).getFullYear() || 'N/A'}</span>
+                                </div>
+                            </div>`
+                        );
+                    }
+                });
+
+                randomMovies20.forEach(function(movie) {
+                    if (movie.poster_path) {
+                        $('#poster-20').append(
+                            `<div class="movie-card">
+                                <img src="http://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-responsive" alt="${movie.title}" />
+                                <p><strong>${movie.title}</strong></p>
+                                <div class="info-buttons">
+                                    <span class="button">Rating: ${movie.vote_average || 'N/A'}</span>
                                     <span class="button">Year: ${new Date(movie.release_date).getFullYear() || 'N/A'}</span>
                                 </div>
                             </div>`
@@ -35,7 +52,8 @@ $(document).ready(function() {
                     }
                 });
             } else {
-                $('#poster').html('<div class="alert"><p>No movies found.</p></div>');
+                $('#poster-4').html('<div class="alert"><p>No movies found.</p></div>');
+                $('#poster-20').html('<div class="alert"><p>No movies found.</p></div>');
             }
         });
     });
