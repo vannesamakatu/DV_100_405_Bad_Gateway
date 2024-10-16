@@ -56,7 +56,7 @@ p {
     margin-top: 30px;
     border-radius: 35px;
     padding: 0px 40px;
-    background-color: #8BE67D;
+    background-color: #ffffff;
 }
 
 .navbar-logo {
@@ -73,9 +73,14 @@ p {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
+   margin-top: 50px;
    
+  }
+
+  .container h1{
+   margin: 30px;
+
   }
   
   
@@ -96,14 +101,14 @@ p {
     color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px;
     width: 267px;
   }
 
   .img-responsive {
     width:267px; 
     height: 400px;
-    margin: 0px 20px ;
+   
     transition: transform 0.2s;
     border-radius: 10px;
   }
@@ -122,6 +127,63 @@ p {
     padding: 0px 25px;
    }
 
+   .img-responsive {
+    width: auto; 
+    height: 200px ;
+    margin: 0px 10px;
+    transition: transform 0.2s;
+    border-radius: 10px;
 
+   
+  }
+
+  #poster div {
+    text-align: center;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+   
+    
+  }
+
+  #poster p {
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    padding: 0px;
+    border-radius: 10px;
+    margin: 0px;
+    width: 133px;
+    font-weight: 200;
+  }
+
+}
+
+.info-buttons {
+    display: none; /* Hide buttons by default */
+    position: absolute;
+    bottom: 50px; /* Position from the bottom */
+    right: 20px; /* Position from the right */
+    background: rgba(255, 255, 255, 0.642); /* Dark background for better visibility */
+    padding: 5px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+
+}
+
+.movie-card {
+    position: relative; /* Ensure relative positioning for absolute children */
+    display: inline-block;
+    margin: 15px;
+}
+
+.movie-card:hover .info-buttons {
+    display: block; /* Show buttons on hover */
+}
+
+.button {
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-radius: 5px;
 }
 
