@@ -158,32 +158,29 @@ p {
 }
 
 .info-buttons {
-    display: none; /* Hide buttons by default */
+    display: none; 
     position: absolute;
-    bottom: 50px; /* Position from the bottom */
-    right: 20px; /* Position from the right */
-    background: rgba(255, 255, 255, 0.642); /* Dark background for better visibility */
-    padding: 5px;
+    bottom: 50px; 
+    right: 10px; 
+    background: rgba(84, 84, 84, 0.642); 
+    padding: 10px;
     border-radius: 5px;
-    backdrop-filter: blur(10px);
-
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 12px;
+    white-space: nowrap; 
 }
 
 .movie-card {
-    position: relative; /* Ensure relative positioning for absolute children */
+    position: relative; 
     display: inline-block;
     margin: 15px;
 }
 
 .movie-card:hover .info-buttons {
-    display: block; /* Show buttons on hover */
+    display: block; 
 }
 
-.button {
-    color: rgb(0, 0, 0);
-    margin: 10px;
-    font-size: 12px;
-    white-space: nowrap; /* Prevent text wrapping */
-    border-radius: 5px;
-}
 

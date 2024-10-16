@@ -27,8 +27,8 @@ $(document).ready(function() {
                                 <img src="http://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-responsive" alt="${movie.title}" />
                                 <p><strong>${movie.title}</strong></p>
                                 <div class="info-buttons">
-                                    <span class="button age-rating">Rating: ${movie.vote_average|| 'N/A'}</span>
-                                    <span class="button release-year">Year: ${new Date(movie.release_date).getFullYear() || 'N/A'}</span>
+                                    <span class="button">Rating: ${movie.vote_average|| 'N/A'}</span>
+                                    <span class="button">Year: ${new Date(movie.release_date).getFullYear() || 'N/A'}</span>
                                 </div>
                             </div>`
                         );
