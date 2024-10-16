@@ -27,7 +27,13 @@ $(document).ready(function() {
                         $('#poster-4').append(
                             `<div class="movie-card">
                                 <img src="http://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-responsive" alt="${movie.title}" />
-                                <p><strong>${movie.title}</strong></p>
+                                <p class="d-flex align-items-center">
+                                    <strong>${movie.title}</strong>
+                                    <svg class="ms-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
+                                        <line x1="15" x2="9" y1="10" y2="10"/>
+                                    </svg>
+                                </p>
                                 <div class="info-buttons">
                                     <span class="button">Rating: ${movie.vote_average || 'N/A'}</span>
                                     <span class="button">Year: ${new Date(movie.release_date).getFullYear() || 'N/A'}</span>
@@ -36,6 +42,7 @@ $(document).ready(function() {
                         );
                     }
                 });
+                
 
                 randomMovies20.forEach(function(movie) {
                     if (movie.poster_path) {

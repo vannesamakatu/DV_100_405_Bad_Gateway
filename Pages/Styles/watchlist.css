@@ -39,7 +39,7 @@ p {
     margin: 30px auto 0 auto;
     border-radius: 35px;
     padding: 0 40px;
-    background-color: #ffffff;
+    background-color: #8BE67D;
 }
 
 .navbar .nav-item a {
@@ -148,4 +148,16 @@ p {
 
 .movie-card:hover .info-buttons {
     display: block; 
+}
+
+.view_more{
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
