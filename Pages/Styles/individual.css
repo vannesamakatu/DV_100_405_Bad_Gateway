@@ -1,5 +1,5 @@
 body {
-    background-color: #000000; 
+   background-color: #000000;
     max-width: 100%;
 }
 
@@ -74,7 +74,7 @@ p {
 }
 
 .nav-link:hover{
-    color: #0B4BB7;
+    color: #5e5e5f;
 }
 
 .search-bar {
@@ -112,8 +112,9 @@ p {
 
 .container {
     width: 100%;
-    margin: 6% auto 0 auto; 
+    margin: 6% auto 0 auto;
     padding: 20px;
+    
 }
 
 .row {
@@ -153,7 +154,7 @@ p {
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color:grey;
     color: white;
     cursor: pointer;
 }
@@ -179,7 +180,7 @@ p {
 }
 
 .description-content {
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     border-radius: 5px;
 }
 
@@ -191,7 +192,7 @@ p {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; 
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -204,6 +205,12 @@ p {
     height: 100%;
 }
 
+.action-buttons {
+    margin-top: 5%;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
 .action-buttons button {
     display: flex;
     align-items: center;
@@ -211,10 +218,9 @@ p {
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #515356;
     color: white;
     cursor: pointer;
-    margin: 5px;
 }
 
 .action-buttons button:hover {
@@ -224,3 +230,77 @@ p {
 .action-buttons img {
     margin-right: 8px;
 }
+
+.sec-2 {
+    margin-top: 20px;
+}
+
+.director-p h7 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #343a40;
+}
+
+
+.sec-3 {
+    margin-top: 20px;
+}
+
+
+.cast-p h7 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #343a40;
+}
+
+.movie-cards-container h4{
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+.movie-cards-container {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center; 
+    
+}
+
+.movie-cards {
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items:center;
+    
+}
+
+.movie-card {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#view-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8BE67D;
+    color:black;
+    cursor: pointer;
+}
+
+#view-more:hover {
+    background-color: #0056b3;
+}
+

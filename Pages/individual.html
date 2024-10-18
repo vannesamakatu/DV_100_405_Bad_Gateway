@@ -23,6 +23,7 @@
 </head>
 <body>
 
+    
     <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link" aria-current="page" href="../index.html">
@@ -40,7 +41,6 @@
         </li>
         <li class="nav-item">
             <div class="search-bar">
-                
                 <button type="submit">
                     <img src="../Assets/images/search-icon.png" alt="Search Icon">
                 </button>
@@ -48,12 +48,9 @@
             </div>
         </li>
     </ul>
-
     <img src="../Assets/images/user-icon.png" alt="User Icon" class="user-icon">
 
-
-
-    <<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col1">
                 <div class="movie-title">
@@ -73,17 +70,21 @@
                 </div>
                 <div class="action-buttons">
                     <button type="button" id="play">
-                        <img src="path/to/play.png" alt="Play Icon" style="width: 20px; height: 20px; vertical-align: middle;"/> Play
+                        <img src="../Assets/images/play-icon.png" alt="Play Icon" style="width: 20px; height: 20px; vertical-align: middle;"/> Play
                     </button>
                     <button type="button" id="myList">
-                        <img src="path/to/bookmark.png" alt="Bookmark Icon" style="width: 20px; height: 20px; vertical-align: middle;"/> My List
+                        <img src="../Assets/images/bookmark-icon.png" alt="Bookmark Icon" style="width: 20px; height: 20px; vertical-align: middle;"/> My List
                     </button>
                     <button type="button" id="tick">
-                        <img src="path/to/tick.png" alt="Tick Icon" style="width: 20px; height: 20px; vertical-align: middle;"/>
+                        <img src="../Assets/images/check-icon.png" alt="Check Icon" style="width: 20px; height: 20px; vertical-align: middle;"/>
                     </button>
                 </div>
-
-
+                <div class="sec-2">
+                    <h6>Director:</h6>
+                    <h7 id="director-p">Name Of Director</h7>
+                    <h6>Cast:</h6>
+                    <h7 id="cast-p">Name of Cast Members</h7>
+                </div>
             </div>
             <div class="col2">
                 <div class="video-container">
@@ -92,8 +93,13 @@
             </div>
         </div>
     </div>
-    
 
-    <script src="../Pages/Scripts/individual.js"></script>     
+    <div class="movie-cards-container">
+        <h4>Similar Movies</h4>
+        <div class="movie-cards" id="movie-cards"></div>
+        <button id="view-more" onclick="loadMoreMovies()">View More</button>
+    </div>
+    
+    <script src="../Pages/Scripts/individual.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
