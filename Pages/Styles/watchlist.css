@@ -122,6 +122,17 @@ p {
         width: 133px;
         font-weight: 200;
     }
+    
+    .img-responsive {
+        width: 267px; 
+        height: 400px;
+        transition: transform 0.2s;
+        border-radius: 10px;
+    }
+    
+    .img-responsive:hover {
+        transform: scale(1.05);
+    }
 }
 
 .info-buttons {
