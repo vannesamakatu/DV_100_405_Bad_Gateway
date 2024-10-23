@@ -122,7 +122,7 @@ p {
         width: 133px;
         font-weight: 200;
     }
-    
+
     .img-responsive {
         width: 267px; 
         height: 400px;
@@ -133,22 +133,52 @@ p {
     .img-responsive:hover {
         transform: scale(1.05);
     }
+
+    .info-buttons {
+        position: absolute; /* Ensure it's positioned over the image */
+        bottom: 20px; /* Distance from the bottom of the image */
+        right: 30px; /* Distance from the left of the image */
+        display: none; /* Arrange items in a row */
+        gap: 10px; /* Space between the "Rating" and "Year" */
+    }
+    
+    .rating-button, .year-button, .runtime-button, .age-rating-button {
+        background: rgba(215, 215, 215, 0.913); /* Individual backgrounds */
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    #poster-4 p, #poster-20 p {
+        font-size: 1em;
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px;
+        width: 267px;
+    }
+    
 }
 
 .info-buttons {
-    display: none; 
-    position: absolute;
-    bottom: 50px; 
-    right: 10px; 
-    background: rgba(215, 215, 215, 0.913); 
-    padding: 10px;
+    position: absolute; /* Ensure it's positioned over the image */
+    bottom: 60px; /* Distance from the bottom of the image */
+    right: 30px; /* Distance from the left of the image */
+    display: none; /* Arrange items in a row */
+    gap: 10px; /* Space between the "Rating" and "Year" */
+}
+
+.rating-button, .year-button, .runtime-button, .age-rating-button {
+    background: rgba(215, 215, 215, 0.913); /* Individual backgrounds */
+    padding: 5px 10px;
     border-radius: 5px;
-    backdrop-filter: blur(5px);
     font-weight: 600;
     color: rgb(0, 0, 0);
-    margin: 10px;
     font-size: 12px;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .movie-card {
@@ -158,17 +188,16 @@ p {
 }
 
 .movie-card:hover .info-buttons {
-    display: block; 
+    display: flex; 
+    position: absolute; /* Ensure it's positioned over the image */
+    bottom: 60px; /* Distance from the bottom of the image */
+    right: 30px; 
+
 }
 
-.view_more{
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: black;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-top: 30px;
+.no-movies {
+    color: white; /* Or any color you prefer */
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto; /* Centers the message */
 }
