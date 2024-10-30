@@ -160,7 +160,6 @@ p {
         margin: 20px;
         width: 267px;
     }
-    
 }
 
 .info-buttons {
@@ -192,7 +191,6 @@ p {
     position: absolute; /* Ensure it's positioned over the image */
     bottom: 60px; /* Distance from the bottom of the image */
     right: 30px; 
-
 }
 
 .no-movies {
@@ -200,4 +198,19 @@ p {
     text-align: center;
     font-size: 40px;
     margin: 20px auto; /* Centers the message */
+}
+
+#poster-4 svg,
+#poster-20 svg {
+    margin-left: auto; /* Adjust spacing for icons */
+    cursor: pointer; 
+    display: flex; /* Change to inline-block for better alignment */
+    width: 24px; /* Set a consistent width for icons */
+    height: 24px; /* Set a consistent height for icons */
+}
+
+.add-bookmark,
+.remove-bookmark {
+    fill: rgb(0, 0, 0); /* Ensures the icons are visible */
+    stroke: white; /* Set the stroke color to white */
 }
