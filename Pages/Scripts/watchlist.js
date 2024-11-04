@@ -101,6 +101,6 @@ $(document).ready(function() {
                 $('#poster-4').html('<div class="alert"><p>No movies found.</p></div>');
                 $('#poster-20').html('<div class="alert"><p>No movies found.</p></div>');
             }
-        });
+        }); 
     });
 });
