@@ -8,42 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-header">
-                <a href="#"><img src="/Assets/images/click-logo-type.png" alt="Logo" class="logo-header"></a>
-            </div>
-            <nav class="nav-links">
-                <a href="#" class="nav-item active">Home</a>
-                <a href="#" class="nav-item active">Library</a>
-                <a href="#" class="nav-item active">My List</a>
-            </nav>
-            <div class="search-container">
-                <input type="text" placeholder="Search">
-                <button class="search-button">
-                    <img src="/Assets/images/search-icon.png" alt="Search Icon">
-                </button>
-            </div>
-        </div>
-    </header>
 
     <div class="signup-container">
         <div class="signup-box">
             <h1>Sign up</h1>
             <form action="submit_signup.php" method="POST">
                 <div class="input-group">
+                    <i class="fas fa-user icon"></i>
                     <input type="text" id="username" name="username" placeholder="Username" required>
                 </div>
                 <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
                     <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
                     <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
                 </div>
                 <button type="submit" class="signup-button">Sign Up</button>
@@ -54,19 +41,6 @@
         </div>
     </div>
 
-<footer>
-    <div class="footer-container">
-        <nav class="footer-nav">
-            <a class="links" href="#">Home</a>
-            <a class="links" href="#">Library</a>
-            <a class="links" href="#">My List</a>
-            <a href="#"><img src="/Assets/images/click-logo-pictoral.png" alt="Logo" class="footer-logo"></a>
-            <a class="links" href="#">About</a>
-            <a class="links" href="#">Legal</a>
-            <a class="links" href="#">Account</a>
-        </nav>
-    </div>
-</footer>
-
+ 
 </body>
 </html>
