@@ -481,3 +481,21 @@ p {
  }
  
  /*carousel ends here............................................................................................................................................................................................*/
+
+
+ .flexMostPopularMoviesContainer {
+    display: flex;
+    width: 1920px;
+    height: 500px;
+}
+
+.flexPopularItem1 img{
+    margin-top: 50px;
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.flexPopularItem1Text {
+    margin-top: 50px;
+}
