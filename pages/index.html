@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click - My List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts Roboto-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <img src="../Assets/Images/click-logo-transparent.png" class="navbar-logo" alt="Logo">
+        <button class="navbar-toggler" type="button" onclick="toggleNavbar()" style="border: none; background: none; padding: 0">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Library</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My List</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div class="flexHomeContainer1">
+        <div class="carousel-container-home-header">
+            <div class="carousel-home">
+                <div class="carousel-item active">
+                    <img src="../assets/images/Test_Images/pexels-action.jpg" alt="Image 1">
+                    <div class="overlay_text_header">
+                        Name:
+                        <br>
+                        Director:
+                        <br>
+                        Genre:
+                        <br>
+                        Viewer Rating:</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/Test_Images/pexels-moviestrip.jpg" alt="Image 2">
+                    <div class="overlay_text_header">
+                        Name:
+                        <br>
+                        Director:
+                        <br>
+                        Genre: 
+                        <br>
+                        Viewer Rating:</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/Test_Images/pexels-old_tv.jpg" alt="Image 3">
+                    <div class="overlay_text_header">
+                        Name:
+                        <br>
+                        Director:
+                        <br>
+                        Genre: 
+                        <br>
+                        Viewer Rating:</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/images/Test_Images/pexels-popcorn_yellow.jpg" alt="Image 4">
+                    <div class="overlay_text_header">
+                        Name:
+                        <br>
+                        Director:
+                        <br>
+                        Genre: 
+                        <br>
+                        Viewer Rating:</div>
+                </div>
+            </div>
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            
+            <!-- Move the indicators here, outside the .carousel div -->
+            <div class="carousel-indicators">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+      
+      <div class="container">
+        <h1>My List</h1>
+        <div id="poster-4"></div>
+    </div>
+
+    <div class="container">
+        <h1>We think you'll love these!</h1>
+        <div id="poster-20"></div>
+    </div>
+
+    <button class="view_more">View More</button>
+
+    
+      
+
+    <footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="home.js"></script>
+        <script>
+          function toggleNavbar() {
+              const navbarContent = document.getElementById('navbarContent');
+              navbarContent.classList.toggle('show');
+          }
+      </script>
+    </footer>
+</body>
+</html>
