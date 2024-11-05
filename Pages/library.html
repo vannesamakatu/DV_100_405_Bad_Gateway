@@ -2,10 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Posters - Netflix Style</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/..." crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Styles/library.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo Area -->
+            <a class="navbar-brand" href="#">
+                <img src="/Assets/images/click-logo-transparent.png" class="navbar-logo" alt="Logo">
+            </a>
+            <!-- Hamburger Menu for Mobile Devices -->
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Navigation Links and Search Bar -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My List</a>
+                    </li>
+                </ul>
+                <!-- Search Functionality -->
+                <form class="d-flex custom-search-container" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn custom-search-button" type="submit">
+                        <img src="/Assets/images/search-icon.png" alt="Search Icon">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slideshow-inner" id="slideshow-inner">
+            <!-- Movie slides will be dynamically added here -->
+        </div>
+        <div class="slideshow-dots" id="slideshow-dots">
+            <!-- Navigation dots for the slideshow -->
+        </div>
+    </div>
+
+    <!-- Genre Filter Dropdown -->
+    <div id="filter-container">
+        <select id="genre-filter">
+            <option value="">All</option>
+        </select>
+    </div>
+
+    <!-- Container for Movie Sections -->
+    <div id="movie-sections" class="container"></div>
     
+    <!-- Back to Top Button -->
+    <button id="back-to-top"><span>&#x21E7;</span></button>
+    
+    <!-- Load More Movies Button -->
+    <button id="load-more">&#x25BC;</button>
+
+    <!-- Footer Section -->
+    <footer class="custom-footer">
+        <div class="custom-footer-container">
+            <nav class="custom-footer-nav">
+                <a class="custom-footer-link" href="#">Home</a>
+                <a class="custom-footer-link" href="#">Library</a>
+                <a class="custom-footer-link" href="#">My List</a>
+                <a href="#"><img src="/Assets/images/click-logo-pictoral.png" alt="Logo" class="custom-footer-logo"></a>
+                <a class="custom-footer-link" href="#">About</a>
+                <a class="custom-footer-link" href="#">Legal</a>
+                <a class="custom-footer-link" href="#">Account</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6..." crossorigin="anonymous"></script>
+    <!-- jQuery Library -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="Scripts/library.js"></script>
+    <!-- Script to Handle Navbar Toggle on Mobile -->
+    <script>
+        function toggleNavbar() {
+            const navbarContent = document.getElementById('navbarContent');
+            navbarContent.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
