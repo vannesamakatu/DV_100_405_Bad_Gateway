@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Click - My List</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-        <!-- Google Fonts Roboto-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="./Styles/watchlist.css" rel="stylesheet">
-        <link href="./Styles/individual.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
-        <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
-        <script src="movie.js"></script>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click - Movie Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="./Styles/watchlist.css" rel="stylesheet">
+    <link href="./Styles/individual.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
 </head>
 <body>
  
@@ -47,119 +42,116 @@
     
 
     <div class="movie-desc-container">
-            <div class="row">
-                <!-- Movie Description Column -->
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="movie-title">
-                        <h3 id="movie-title">Title Of Movie</h3>
-                    </div>
-                    
-                    <!-- New Row for Genre, Rating, Duration, and Release Date Buttons -->
-                    <div class="movie-info-buttons mb-3">
-                        <button type="button" class="btn btn-sm" id="genre">Genre</button>
-                        <button type="button" class="btn btn-sm" id="rating">Rating</button>
-                        <button type="button" class="btn btn-sm" id="duration">Duration</button>
-                        <button type="button" class="btn btn-sm" id="release-date">Release Date</button>
-                    </div>
-                    
-                    <div class="mov-des">
-                        <div class="movie-des">
-                            <h5>Description</h5>
-                            <div class="description-content">
-                                <p id="description">Your description goes here...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="action-buttons mt-3">
-                        <!-- Play Button with Font Awesome Icon -->
-                        <button type="button" class="btn btn-primary" id="play">
-                            <i class="fas fa-play" style="margin-right: 8px;"></i> Play
-                        </button>
-                        
-                        <!-- Bookmark Button with Font Awesome Icon -->
-                        <button type="button" class="btn btn-secondary" id="myList">
-                            <i class="fas fa-bookmark" style="margin-right: 8px;"></i> My List
-                        </button>
-                        
-                        <!-- Check Button with Font Awesome Icon -->
-                        <button type="button" class="btn btn-success" id="tick">
-                            <i class="fas fa-check" style="margin-right: 8px;"></i>
-                        </button>
-                    </div>
-                    <div class="sec-2 mt-3">
-                        <h6>Director:</h6>
-                        <p id="director-p">Name Of Director</p>
-                        <h6>Cast:</h6>
-                        <p id="cast-p">Name of Cast Members</p>
-                    </div>
+        <div class="row">
+            <!-- Movie Description Column -->
+            <div class="col-12 col-lg-6 mb-4">
+                <div class="movie-title">
+                    <h3 id="movie-title">Title Of Movie</h3>
                 </div>
                 
-                <!-- Video Column -->
-                <div class="col-12 col-lg-6">
-                    <div class="video-container">
-                        <iframe id="trailer" width="100%" height="315" src="" title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- Genre, Rating, Duration, and Release Date Buttons -->
+                <div class="movie-info-buttons mb-3">
+                    <button type="button" class="btn btn-sm" id="genre">Genre</button>
+                    <button type="button" class="btn btn-sm" id="rating">Rating</button>
+                    <button type="button" class="btn btn-sm" id="duration">Duration</button>
+                    <button type="button" class="btn btn-sm" id="release-date">Release Date</button>
+                </div>
+                
+                <div class="mov-des">
+                    <div class="movie-des">
+                        <h5>Description</h5>
+                        <div class="description-content">
+                            <p id="description">Your description goes here...</p>
+                        </div>
                     </div>
                 </div>
+                <div class="action-buttons mt-3">
+                    <!-- Play Button with Font Awesome Icon -->
+                    <button type="button" class="btn btn-primary" id="play">
+                        <i class="fas fa-play" style="margin-right: 8px;"></i> Play
+                    </button>
+                    
+                    <!-- Bookmark Button with Font Awesome Icon -->
+                    <button type="button" class="btn btn-secondary" id="myList">
+                        <i class="fas fa-bookmark" style="margin-right: 8px;"></i> My List
+                    </button>
+                    
+                    <!-- Check Button with Font Awesome Icon -->
+                    <button type="button" class="btn btn-success" id="tick">
+                        <i class="fas fa-check" style="margin-right: 8px;"></i>
+                    </button>
+                </div>
+                <div class="sec-2 mt-3">
+                    <h6>Director:</h6>
+                    <p id="director-p">Name Of Director</p>
+                    <h6>Cast:</h6>
+                    <p id="cast-p">Name of Cast Members</p>
+                </div>
             </div>
-        </div>
             
-           
-        <div class="container">
-            <h1>We think you'll love these!</h1>
-            <div id="poster-20"></div>
-        </div>
-    
-        <a href="library.html" style="text-decoration: none;"><button id="view-more">view more</button></a>
-
-        <footer class="bg-dark text-white py-4">
-            <div class="footer-container">
-                <div class="row align-items-center">
-                    <!-- Left Links Section -->
-                    <div class="col-12 col-md-4 mb-3 mb-md-0">
-                        <nav class="nav justify-content-center justify-content-md-end">
-                            <a class="nav-link text-white" href="../index.html">Home</a>
-                            <a class="nav-link text-white" href="library.html">Library</a>
-                            <a class="nav-link text-white" href="watchlist.html">My List</a>
-                        </nav>
-                    </div>
-                    <!-- Logo Section -->
-                    <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
-                        <a href="#">
-                            <img src="/Assets/images/click-logo-pictoral.png" alt="Logo" class="img-fluid custom-footer-logo" style="max-width: 100px;">
-                        </a>
-                    </div>
-                    <!-- Right Links Section -->
-                    <div class="col-12 col-md-4">
-                        <nav class="nav justify-content-center justify-content-md-start">
-                            <a class="nav-link text-white" href="">About</a>
-                            <a class="nav-link text-white" href="">Legal</a>
-                            <a class="nav-link text-white" href="">Account</a>
-                        </nav>
-                    </div>
+            <!-- Video Column -->
+            <div class="col-12 col-lg-6">
+                <div class="video-container">
+                    <iframe id="trailer" width="100%" height="315" src="" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
-        </footer>
+        </div>
+    </div>
         
-          <!-- Bootstrap JS Bundle (includes Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        
-        <!-- jQuery Library -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        
-        <!-- Custom JavaScript -->
-        <script src="Scripts/library.js"></script>
-        
-        <!-- Script to Handle Navbar Toggle on Mobile -->
-        <script>
-            function toggleNavbar() {
-                const navbarContent = document.getElementById('navbarContent');
-                navbarContent.classList.toggle('show');
-            }
-        </script>
-        <script src="./Scripts/watchlist.js"></script>
-        <script src="./Scripts/individual.js"></script>
- 
+    <div class="container">
+        <h1>We think you'll love these!</h1>
+        <div id="poster-20"></div>
+    </div>
 
+    <a href="library.html" style="text-decoration: none;"><button id="view-more">view more</button></a>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="footer-container">
+            <div class="row align-items-center">
+                <!-- Left Links Section -->
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                    <nav class="nav justify-content-center justify-content-md-end">
+                        <a class="nav-link text-white" href="../index.html">Home</a>
+                        <a class="nav-link text-white" href="library.html">Library</a>
+                        <a class="nav-link text-white" href="watchlist.html">My List</a>
+                    </nav>
+                </div>
+                <!-- Logo Section -->
+                <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+                    <a href="#">
+                        <img src="/Assets/images/click-logo-pictoral.png" alt="Logo" class="img-fluid custom-footer-logo" style="max-width: 100px;">
+                    </a>
+                </div>
+                <!-- Right Links Section -->
+                <div class="col-12 col-md-4">
+                    <nav class="nav justify-content-center justify-content-md-start">
+                        <a class="nav-link text-white" href="">About</a>
+                        <a class="nav-link text-white" href="">Legal</a>
+                        <a class="nav-link text-white" href="">Account</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+      <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery Library -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./Scripts/individual.js"></script>
+    
+    <!-- Script to Handle Navbar Toggle on Mobile -->
+    <script>
+        function toggleNavbar() {
+            const navbarContent = document.getElementById('navbarContent');
+            navbarContent.classList.toggle('show');
+        }
+    </script>
+
+</body>
 </html>

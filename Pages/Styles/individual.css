@@ -1,3 +1,4 @@
+/* Base styles for the entire website */
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +7,15 @@
 }
 
 body {
-   
     max-width: 100%;
     background-color: #000000;
-    background-position: scroll;
-   
+    color: #ffffff;
 }
 
 h1 {
-
     font-family: "Roboto", sans-serif;
     font-weight: 700;
-    margin-top: 40px;
-    margin-left: 90px;
+    margin: 40px 90px 0 90px;
     color: white;
 }
 
@@ -31,35 +28,143 @@ p {
 .roboto-regular {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-style: normal;
-    padding: 22px;
-    padding-left: 0px;
+    padding: 22px 0;
 }
 
-.roboto-bold {
+.roboto-bold, .roboto-bold-white {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 20px;
-    font-style: normal;
     padding: 20px;
 }
-  
+
 .roboto-bold-white {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    font-style: normal;
     color: white;
 }
 
 .selector-for-some-widget {
     box-sizing: content-box;
-  }
+}
 
+/* Navbar Styles */
+.navbar {
+    width: 80%;
+    max-width: 600px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border: 1px solid transparent;
+}
 
+.navbar:before,
+.navbar:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-shadow);
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 35px;
+    animation: animate 10s linear infinite;
+}
 
+.navbar:after {
+    filter: blur(8px);
+}
 
+@keyframes animate {
+    0% { background-position: 0 0; }
+    50% { background-position: 200% 0; }
+    100% { background-position: 0 0; }
+}
 
+.navbar .nav-item a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.navbar-logo {
+    height: 70px; 
+    margin-right: 15px; 
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        margin-top: 20px;
+        max-width: 100%;
+        border-radius: 30px;
+        padding: 0px 20px;
+        top: 5%;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-logo {
+        margin-top: -5px;
+    }
+
+    .navbar-toggler {
+        border: none;
+        color: #000;
+        font-size: 1.5rem;
+    }
+
+    .navbar-collapse {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 30px 30px;
+        color: #000000;
+        position: absolute;
+        top: 65px;
+        width: 100%;
+        left: 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        transition: ease-in-out 1s;
+    }
+
+    .nav-link {
+        color: #000;
+        font-size: 1.1em;
+    }
+
+    /* Adjust movie posters on mobile */
+    .img-responsive {
+        width: auto; 
+        height: 200px;
+        margin: 0 10px;
+    }
+
+    #poster-20 .movie-card {
+        width: 150px;
+    }
+
+    .info-buttons {
+        bottom: 50px;
+        right: 5px;
+    }
+
+    .rating-button, .year-button, .runtime-button, .age-rating-button {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
+
+/* Movie Description Container */
 .movie-desc-container {
     width: 80%;
     margin: 150px auto 0 auto;
@@ -68,58 +173,118 @@ p {
     border-radius: 20px;
 }
 
-
-.col1 {
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color:#ffffff;
+/* Movie Card Styles */
+.movie-card {
+    position: relative; 
+    display: inline-block;
+    margin: 15px;
+    width: 200px; /* Consistent width */
 }
 
-.col2 {
-    padding: 20px;
+.movie-card img {
+    width: 100%;
+    height: 300px; /* Consistent height */
+    transition: transform 0.2s;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color:#ffffff;
-    border-radius: 20px;
+    object-fit: cover;
 }
 
-.movie-title {
-    margin: 0 0 20px 10px;
-    font-size: 24px;
-    color:#ffffff;
-    
-}
-
-.movie-title button {
-    margin: 0px;
-    padding: 10px 15px;
-    font-size: 14px;
-    border: none;
-    border-radius: 10px;
-    background-color:#000000;
+.movie-card p {
+    font-size: 1em;
     color: rgb(255, 255, 255);
-    cursor: pointer;
-    height: 40px;
-}
-
-.movie-info-buttons .btn{
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    border: none;
+    padding: 10px;
     border-radius: 10px;
-    background-color:#000000;
-    color: rgb(255, 255, 255);
+    margin: 10px 0;
+    width: 100%; /* Make it fit within the card */
+    text-align: center;
+}
+
+/* Info Buttons on Hover */
+.info-buttons {
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.movie-card:hover .info-buttons {
+    display: flex;
+}
+
+.info-buttons .year-button,
+.info-buttons .age-rating-button,
+.info-buttons .runtime-button {
+    background: rgba(215, 215, 215, 0.913);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Container for Related Movies */
+#poster-20 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Ensure .movie-card within #poster-20 have consistent sizing */
+#poster-20 .movie-card {
+    width: 200px; /* Ensuring same width */
+}
+
+@media (max-width: 768px) {
+    .movie-card {
+        width: 150px; /* Smaller width for mobile */
+    }
+
+    .movie-card img {
+        height: 225px; /* Adjust height proportionally */
+    }
+
+    #poster-20 .movie-card {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        width: 100%;
+    }
+
+    .movie-card img {
+        height: auto;
+    }
+
+    #poster-20 .movie-card {
+        width: 100%;
+    }
+}
+
+/* View More Button */
+#view-more{
+    display: block;
+    margin: 50px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgb(45, 45, 45);
+    border: none;
+    color: white;
     cursor: pointer;
-    height: 40px;
+    border-radius: 15px;
 }
 
-.movie-title button:hover {
-    background-color: #00c030;
-    color: black;
+#view-more:hover {
+    color: #8BE67D;
 }
 
+/* Movie Description Styles */
 .mov-des {
     margin-top: 30px;
 }
@@ -137,11 +302,6 @@ p {
 }
 
 .sec-2 {
-    color: #ffffff;
-    background-color: none;
-}
-
-.description-content {
     color: #ffffff;
 }
 
@@ -191,49 +351,11 @@ p {
     margin-right: 8px;
 }
 
-
-
-.director-p h7 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
-    color: #343a40;
-}
-
-
-.sec-3 {
-    margin-top: 20px;
-}
-
-
+.director-p h7,
 .cast-p h7 {
     margin: 0 0 10px 0;
     font-size: 18px;
     color: #343a40;
-}
-
-
-
-.rating-button, .year-button, .runtime-button, .age-rating-button {
-    background: rgba(215, 215, 215, 0.913); /* Individual backgrounds */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    font-size: 12px;
-    white-space: nowrap;
-}
-
-.movie-card {
-    position: relative; 
-    display: inline-block;
-    margin: 15px;
-}
-
-.movie-card:hover .info-buttons {
-    display: flex; 
-    position: absolute; /* Ensure it's positioned over the image */
-    bottom: 60px; /* Distance from the bottom of the image */
-    right: 30px; 
 }
 
 .no-movies {

@@ -19,13 +19,11 @@ $(document).ready(function() {
     let slideshowIndex = 0;
     let slideshowInterval;
 
-  
-
     // Fetch movies to display in the slideshow
     function fetchSlideshowMovies() {
         const slideshowApiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
         $.getJSON(slideshowApiUrl, function(response) {
-            const movies = response.results.slice(5, 10); // Get the first 3 movies
+            const movies = response.results.slice(5, 10); // Get movies 6 to 10 for slideshow
             displaySlideshowMovies(movies);
         }).fail(function() {
             console.error("Slideshow movies couldn't be loaded.");
@@ -193,10 +191,24 @@ $(document).ready(function() {
                         if (moviesProcessed === moviesToShow.length) {
                             $(containerSelector).html(moviesHtml);
 
+                            // Add click event to movie cards for navigation
+                            $(containerSelector).find('.movie-card').each(function() {
+                                const movieId = $(this).data('movie-id');
+
+                                // Add click event to navigate to individual.html with movieId as a URL parameter
+                                $(this).on('click', function(event) {
+                                    // Prevent navigation if the bookmark icon is clicked
+                                    if ($(event.target).closest('.add-to-bookmark').length === 0) {
+                                        window.location.href = `individual.html?movieId=${movieId}`;
+                                    }
+                                });
+                            });
+
                             // Enable bookmarking functionality for each movie
                             $(containerSelector).find('.add-to-bookmark').each(function() {
                                 const movieId = $(this).closest('.movie-card').data('movie-id');
-                                $(this).on('click', function() {
+                                $(this).on('click', function(event) {
+                                    event.stopPropagation(); // Prevent the click from bubbling up to .movie-card
                                     const movieTitle = $(this).closest('.movie-card').find('strong').text();
                                     if (!bookmarks.includes(movieId)) {
                                         bookmarks.push(movieId);
@@ -254,10 +266,24 @@ $(document).ready(function() {
                             $(containerSelector).append(moviesHtml);
                             genreMovieIndexMap[genreId] = endIndex;
 
+                            // Add click event to movie cards for navigation
+                            $(containerSelector).find('.movie-card').each(function() {
+                                const movieId = $(this).data('movie-id');
+
+                                // Add click event to navigate to individual.html with movieId as a URL parameter
+                                $(this).on('click', function(event) {
+                                    // Prevent navigation if the bookmark icon is clicked
+                                    if ($(event.target).closest('.add-to-bookmark').length === 0) {
+                                        window.location.href = `individual.html?movieId=${movieId}`;
+                                    }
+                                });
+                            });
+
                             // Enable bookmarking functionality for each movie in the grid
                             $(containerSelector).find('.add-to-bookmark').each(function() {
                                 const movieId = $(this).closest('.movie-card').data('movie-id');
-                                $(this).on('click', function() {
+                                $(this).on('click', function(event) {
+                                    event.stopPropagation(); // Prevent the click from bubbling up to .movie-card
                                     const movieTitle = $(this).closest('.movie-card').find('strong').text();
                                     if (!bookmarks.includes(movieId)) {
                                         bookmarks.push(movieId);
@@ -377,4 +403,3 @@ $(document).ready(function() {
     // Initiate the genre fetching process
     fetchAllGenres();
 });
-
