@@ -18,6 +18,32 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
         <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
+<script>
+    $(document).ready(function() {
+    const apiKey = '165da49bc464981d104d3ca429f44d75';
+    const posterContainer = $('#poster-4');
+
+    // Load bookmarked movies from localStorage
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+
+    // Fetch and display each bookmarked movie
+    bookmarks.forEach(movieId => {
+        const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+
+        $.getJSON(movieDetailsUrl, function(movie) {
+            const movieHTML = `
+                <div class="movie-card" data-movie-id="${movie.id}">
+                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
+                    <p><strong>${movie.title}</strong></p>
+                </div>
+            `;
+            posterContainer.append(movieHTML);
+        }).fail(function() {
+            console.error("Could not load movie details for bookmarked movie.");
+        });
+    });
+});
+</script>
     
 </head>
 <body>
@@ -78,7 +104,7 @@
                     <nav class="nav justify-content-center justify-content-md-start">
                         <a class="nav-link text-white" href="">About</a>
                         <a class="nav-link text-white" href="">Legal</a>
-                        <a class="nav-link text-white" href="">Account</a>
+                        <a class="nav-link text-white" href="signin.html">Sign Out</a>
                     </nav>
                 </div>
             </div>

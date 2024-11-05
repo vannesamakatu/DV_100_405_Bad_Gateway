@@ -212,7 +212,7 @@ $(document).ready(function() {
                                     const movieTitle = $(this).closest('.movie-card').find('strong').text();
                                     if (!bookmarks.includes(movieId)) {
                                         bookmarks.push(movieId);
-                                        alert(`Added "${movieTitle}" to your bookmarks!`);
+                                        alert(`To add to your list, please go to the My List Page. Sorry for the inconvience!`);
                                     } else {
                                         alert(`"${movieTitle}" is already in your bookmarks.`);
                                     }
@@ -279,20 +279,6 @@ $(document).ready(function() {
                                 });
                             });
 
-                            // Enable bookmarking functionality for each movie in the grid
-                            $(containerSelector).find('.add-to-bookmark').each(function() {
-                                const movieId = $(this).closest('.movie-card').data('movie-id');
-                                $(this).on('click', function(event) {
-                                    event.stopPropagation(); // Prevent the click from bubbling up to .movie-card
-                                    const movieTitle = $(this).closest('.movie-card').find('strong').text();
-                                    if (!bookmarks.includes(movieId)) {
-                                        bookmarks.push(movieId);
-                                        alert(`Added "${movieTitle}" to your bookmarks!`);
-                                    } else {
-                                        alert(`"${movieTitle}" is already in your bookmarks.`);
-                                    }
-                                });
-                            });
 
                             // Manage the visibility of the "Load More" button
                             if (endIndex >= movies.length && genrePageMap[genreId] >= genreTotalPagesMap[genreId]) {
@@ -403,3 +389,5 @@ $(document).ready(function() {
     // Initiate the genre fetching process
     fetchAllGenres();
 });
+
+

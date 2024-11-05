@@ -12,6 +12,7 @@
     <!-- Custom CSS -->
     <link href="./Styles/watchlist.css" rel="stylesheet">
     <link href="./Styles/individual.css" rel="stylesheet">
+    <link href="./Styles/library.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
@@ -33,7 +34,7 @@
                         <a class="nav-link" href="library.html">Library</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My List</a>
+                        <a class="nav-link" href="watchlist.html">My List</a>
                     </li>
                 </ul>
             </div>
@@ -100,11 +101,7 @@
         </div>
     </div>
         
-    <div class="container">
-        <h1>We think you'll love these!</h1>
-        <div id="poster-20"></div>
-    </div>
-
+    <div id="movie-sections" class="container"></div>
     <a href="library.html" style="text-decoration: none;"><button id="view-more">view more</button></a>
 
     <footer class="bg-dark text-white py-4">
@@ -129,7 +126,7 @@
                     <nav class="nav justify-content-center justify-content-md-start">
                         <a class="nav-link text-white" href="">About</a>
                         <a class="nav-link text-white" href="">Legal</a>
-                        <a class="nav-link text-white" href="">Account</a>
+                        <a class="nav-link text-white" href="signin.html">Sign Out</a>
                     </nav>
                 </div>
             </div>
@@ -144,6 +141,7 @@
     
     <!-- Custom JavaScript -->
     <script src="./Scripts/individual.js"></script>
+    <script src="Scripts/library.js"></script>
     
     <!-- Script to Handle Navbar Toggle on Mobile -->
     <script>

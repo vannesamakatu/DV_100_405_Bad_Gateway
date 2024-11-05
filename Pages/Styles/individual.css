@@ -223,6 +223,7 @@ p {
     color: rgb(0, 0, 0);
     font-size: 12px;
     white-space: nowrap;
+    z-index: 999;
 }
 
 /* Container for Related Movies */
@@ -363,4 +364,16 @@ p {
     text-align: center;
     font-size: 40px;
     margin: 20px auto; /* Centers the message */
+}
+
+.movie-info-buttons .btn{
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color:#000000;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 40px;
 }

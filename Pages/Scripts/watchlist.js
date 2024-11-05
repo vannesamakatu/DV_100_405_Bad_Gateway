@@ -15,10 +15,9 @@ $(document).ready(function() {
         // Fetch movies
         $.getJSON(apiUrl, function(json) {
             if (json.results.length > 0) {
-                $('#poster-4').empty();
+                $('#poster-4').html('<p class="no-movies">Nothing to show here :(</p>'); // Initially empty message
                 $('#poster-20').empty();
 
-                let randomMovies4 = json.results.sort(() => 0.5 - Math.random()).slice(0, 4);
                 let randomMovies20 = json.results.sort(() => 0.5 - Math.random()).slice(0, 20);
 
                 // Function to fetch and display movie details
@@ -70,6 +69,9 @@ $(document).ready(function() {
                                 if (!bookmarks.includes(movie.id)) {
                                     bookmarks.push(movie.id);
                                     alert(`Added "${movie.title}" to bookmarks!`);
+                                    fetchMovieDetails(movie, '#poster-4', true);
+
+                                    $('#poster-4 .no-movies').remove();
                                 } else {
                                     alert(`"${movie.title}" is already bookmarked.`);
                                 }
@@ -78,6 +80,7 @@ $(document).ready(function() {
                             // Add remove functionality
                             $(targetContainer).find('.remove-movie').last().on('click', function() {
                                 $(this).closest('.movie-card').remove();
+                                bookmarks = bookmarks.filter(id => id !== movie.id);
 
                                 // If no movies left in #poster-4
                                 if ($('#poster-4 .movie-card').length === 0) {
@@ -87,9 +90,6 @@ $(document).ready(function() {
                         }
                     });
                 }
-
-                // Fetch details for movies in #poster-4 (with remove icon)
-                randomMovies4.forEach(movie => fetchMovieDetails(movie, '#poster-4', true));
 
                 // Fetch details for movies in #poster-20 (with add-to-bookmark icon)
                 randomMovies20.forEach(movie => {
@@ -102,5 +102,43 @@ $(document).ready(function() {
                 $('#poster-20').html('<div class="alert"><p>No movies found.</p></div>');
             }
         }); 
+    });
+});
+
+// Function to save bookmarks to localStorage
+function saveBookmarks() {
+    localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarks));
+}
+
+// Load bookmarks from localStorage on page load
+function loadBookmarks() {
+    const savedBookmarks = localStorage.getItem('bookmarkedMovies');
+    if (savedBookmarks) {
+        bookmarks = JSON.parse(savedBookmarks);
+    }
+}
+
+$(document).ready(function() {
+    const apiKey = '165da49bc464981d104d3ca429f44d75';
+    const posterContainer = $('#poster-4');
+
+    // Load bookmarked movies from localStorage
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+
+    // Fetch and display each bookmarked movie
+    bookmarks.forEach(movieId => {
+        const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+
+        $.getJSON(movieDetailsUrl, function(movie) {
+            const movieHTML = `
+                <div class="movie-card" data-movie-id="${movie.id}">
+                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
+                    <p><strong>${movie.title}</strong></p>
+                </div>
+            `;
+            posterContainer.append(movieHTML);
+        }).fail(function() {
+            console.error("Could not load movie details for bookmarked movie.");
+        });
     });
 });

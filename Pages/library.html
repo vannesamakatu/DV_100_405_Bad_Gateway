@@ -19,6 +19,42 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
         <link rel="icon" href="../Assets/Images/click-logo-pictoral.png" type="image/x-icon">
     
+        <script>
+            $(document).ready(function() {
+                // Load bookmarks from localStorage
+                let bookmarks = [];
+                loadBookmarks();
+        
+                const containerSelector = '.movies-container'; // adjust based on your HTML structure
+        
+                $(containerSelector).find('.add-to-bookmark').each(function() {
+                    const movieId = $(this).closest('.movie-card').data('movie-id');
+                    $(this).on('click', function(event) {
+                        event.stopPropagation();
+                        const movieTitle = $(this).closest('.movie-card').find('strong').text();
+                        if (!bookmarks.includes(movieId)) {
+                            bookmarks.push(movieId);
+                            alert(`Added "${movieTitle}" to your bookmarks!`);
+                            saveBookmarks();  // Save bookmarks to localStorage
+                        } else {
+                            alert(`"${movieTitle}" is already in your bookmarks.`);
+                        }
+                    });
+                });
+        
+                // Save and load bookmarks functions
+                function saveBookmarks() {
+                    localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarks));
+                }
+        
+                function loadBookmarks() {
+                    const savedBookmarks = localStorage.getItem('bookmarkedMovies');
+                    if (savedBookmarks) {
+                        bookmarks = JSON.parse(savedBookmarks);
+                    }
+                }
+            });
+        </script>
     </head>
 <body>
     <!-- Navigation Bar -->
@@ -93,7 +129,7 @@
                 <nav class="nav justify-content-center justify-content-md-start">
                     <a class="nav-link text-white" href="">About</a>
                     <a class="nav-link text-white" href="">Legal</a>
-                    <a class="nav-link text-white" href="">Account</a>
+                    <a class="nav-link text-white" href="signin.html">Sign Out</a>
                 </nav>
             </div>
         </div>
