@@ -20,53 +20,41 @@ function fetchMovieData(movieIds) {
         .then(response => response.json())
         .then(data => {
             document.getElementById('movie-title').textContent = data.title;
-            document.getElementById('genre').textContent = data.genres.map(genre => genre.name).join(', ');
-            document.getElementById('rating').textContent = data.vote_average; 
+
+            // Display only the first genre if it exists
+            document.getElementById('genre').textContent = data.genres.length > 0 ? data.genres[0].name : 'Genre not available';
+
+            document.getElementById('rating').textContent = data.vote_average;
             document.getElementById('duration').textContent = `${data.runtime} minutes`;
-            document.getElementById('release-date').textContent = data.release_date;
+
+            // Extract and display only the year from release_date
+            document.getElementById('release-date').textContent = data.release_date ? data.release_date.slice(0, 4) : 'Year not available';
+
             document.getElementById('description').textContent = data.overview;
+
             // Generate YouTube trailer URL (assuming data includes trailer information)
             document.getElementById('trailer').src = `https://www.youtube.com/embed/${data.trailer_id}`; // Replace with actual trailer ID key if available
+
+            // Fetch and display the director and cast information
+            fetchMovieCredits(movieId);
         })
         .catch(error => console.error('Error fetching data:', error));
 }
 
-// Track the current page for pagination
-let currentPage = 1;
-
-// Function to create a movie card
-function createMovieCard(movie) {
-    const card = document.createElement('div');
-    card.className = 'movie-card';
-    const img = document.createElement('img');
-    img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-    img.alt = movie.title;
-    card.appendChild(img);
-    return card;
-}
-
-// Fetch movies and populate cards
-function fetchMovies(page) {
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`)
+// Fetch and display the director and cast
+function fetchMovieCredits(movieId) {
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`)
         .then(response => response.json())
-        .then(data => {
-            const movies = data.results;
-            const movieCardsContainer = document.getElementById('movie-cards');
-            movies.forEach(movie => {
-                const movieCard = createMovieCard(movie);
-                movieCardsContainer.appendChild(movieCard);
-            });
+        .then(creditsData => {
+            // Find the director from the crew array
+            const director = creditsData.crew.find(member => member.job === 'Director');
+            document.getElementById('director-p').textContent = director ? director.name : 'Director not available';
+
+            // Display the names of the first few cast members
+            const castMembers = creditsData.cast.slice(0, 3).map(member => member.name).join(', ');
+            document.getElementById('cast-p').textContent = castMembers || 'Cast not available';
         })
-        .catch(error => console.error('Error fetching data:', error));
-}
-
-// Initial load of movies
-fetchMovies(currentPage);
-
-// Load more movies when the "View More" button is clicked
-function loadMoreMovies() {
-    currentPage++;
-    fetchMovies(currentPage);
+        .catch(error => console.error('Error fetching credits:', error));
 }
 
 // Call the function to fetch and display random movie data on page load

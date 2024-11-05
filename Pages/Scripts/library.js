@@ -377,3 +377,4 @@ $(document).ready(function() {
     // Initiate the genre fetching process
     fetchAllGenres();
 });
+
