@@ -19,17 +19,13 @@ $(document).ready(function() {
     let slideshowIndex = 0;
     let slideshowInterval;
 
-    // Function to toggle the navbar's visibility on mobile devices
-    function toggleNavbar() {
-        const navbarContent = document.getElementById('navbarContent');
-        navbarContent.classList.toggle('show');
-    }
+  
 
     // Fetch movies to display in the slideshow
     function fetchSlideshowMovies() {
         const slideshowApiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
         $.getJSON(slideshowApiUrl, function(response) {
-            const movies = response.results.slice(0, 3); // Get the first 3 movies
+            const movies = response.results.slice(5, 10); // Get the first 3 movies
             displaySlideshowMovies(movies);
         }).fail(function() {
             console.error("Slideshow movies couldn't be loaded.");
@@ -133,7 +129,7 @@ $(document).ready(function() {
     function populateGenreDropdown() {
         const genreDropdown = $('#genre-filter');
         genreDropdown.empty();
-        genreDropdown.append(new Option('All', ''));
+        genreDropdown.append(new Option('All Genres', ''));
         genreList.forEach(genre => {
             genreDropdown.append(new Option(genre.name, genre.id));
         });
@@ -375,7 +371,7 @@ $(document).ready(function() {
 
     // Scroll back to the top smoothly when the button is clicked
     backToTopBtn.click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 500);
+        $('html, body').animate({ scrollTop: 0 }, 100);
     });
 
     // Initiate the genre fetching process
