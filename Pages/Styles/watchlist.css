@@ -1,7 +1,5 @@
 body {
-   
-    max-width: 100%;
-    background: linear-gradient(to top, rgba(0, 189, 0, 0.735), #000);
+   max-width: 100%;
     background-color: #000;
     background-position: scroll;
     /* Green glow at bottom fading to black */
@@ -343,4 +341,7 @@ p {
     outline: none; /* Removes the focus outline */
   }
 
+  footer{
+    padding: 0px;
+  }
   

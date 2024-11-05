@@ -221,14 +221,14 @@ $(document).ready(function() {
     function loadNextMovies(genreId, containerSelector) {
         const posterRow = $(containerSelector);
         const movieCardWidth = posterRow.find('.poster-item').outerWidth(true);
-        posterRow.animate({ scrollLeft: '+=' + movieCardWidth }, 300);
+        posterRow.animate({ scrollLeft: '+=' + movieCardWidth }, 0);
     }
 
     // Scroll the slider to show the previous set of movies
     function loadPreviousMovies(genreId, containerSelector) {
         const posterRow = $(containerSelector);
         const movieCardWidth = posterRow.find('.poster-item').outerWidth(true);
-        posterRow.animate({ scrollLeft: '-=' + movieCardWidth }, 300);
+        posterRow.animate({ scrollLeft: '-=' + movieCardWidth }, 0);
     }
 
     // Display movies in a grid layout when a genre is selected

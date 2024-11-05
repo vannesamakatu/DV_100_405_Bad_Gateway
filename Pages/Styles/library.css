@@ -3,8 +3,8 @@ body {
     background-color: #000000;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    
-    
+    margin: 0;
+    padding: 0; 
 }
 
 
@@ -60,47 +60,6 @@ body {
 .slideshow-dot.active {
     background-color: #3bff59;
     
-}
-
-/* Footer styling */
-.custom-footer {
-    margin-top: 40px;
-    background-color: #7FF47F;
-    padding: 15px 0;
-    text-align: center;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.custom-footer-container {
-    display: flex;
-    align-items: center;
-}
-
-.custom-footer-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.custom-footer-link {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    padding: 5px 20px;
-    border-radius: 10px;
-}
-
-.custom-footer-link:hover {
-    background-color: #ffffff;
-    color: black;
-}
-
-.custom-footer-logo {
-    max-width: 60px;
 }
 
 /* Container for movie sections */
@@ -283,6 +242,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    fill:#000;
 }
 
 #back-to-top:hover {
