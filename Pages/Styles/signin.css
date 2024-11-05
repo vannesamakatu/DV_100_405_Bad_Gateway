@@ -4,11 +4,28 @@
 }
 
 body {
-    background-color: #e0e0e0;
+    
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: linear-gradient(-45deg,#1B5E20, #349037, #0b7a10, #2a542b, #000000);
+	background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 main {
     flex-grow: 1;
@@ -24,12 +41,13 @@ main {
 }
 
 .signup-box {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.564);
     padding: 2em;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 550px;
     text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 .signup-box h1 {
@@ -37,6 +55,7 @@ main {
     font-size: 40px;
     margin-left: 10px;
     margin-bottom: 0.8em;
+    color: #000000;
 }
 
 .input-group {
@@ -99,3 +118,11 @@ main {
     text-decoration: underline;
 }
 
+.big-logo {
+    position: fixed; /* Makes it stay in place even when scrolling */
+    z-index: 999;
+    top: 2%;          /* Adjusts the vertical positioning */
+    left: 5%;        /* Adjusts the horizontal positioning */
+    transform: translate(-10%, -5%); /* Centers the logo visually if needed */
+    pointer-events: none; /* Optional: Allows users to click 'through' the logo if needed */
+}

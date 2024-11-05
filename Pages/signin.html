@@ -9,14 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/signin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function handleSignIn(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+            // Redirect to library.html
+            window.location.href = 'library.html';
+        }
+    </script>
 </head>
 
 <body>
+    <img class="big-logo" src="../Assets/Images/click-logo-transparent.png" width="200px" height="200px" style="filter: invert();">
 
     <div class="signup-container">
         <div class="signup-box">
             <h1>Sign in</h1>
-            <form action="submit_signup.php" method="POST">
+            <form action="submit_signup.php" method="POST" onsubmit="handleSignIn(event)">
                 <div class="input-group">
                     <i class="fas fa-user icon"></i>
                     <input type="text" id="username" name="username" placeholder="Username" required>
@@ -35,4 +44,3 @@
     </div>
 </body>
 </html>
-
