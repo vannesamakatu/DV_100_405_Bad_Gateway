@@ -56,9 +56,19 @@
     right: 10px;
 }
 
+/* Default: Static on desktop screens */
 .scrollable-container {
-    overflow-x: auto;
-    white-space: nowrap;
+    overflow-x: visible; /* No scroll on desktop */
+    white-space: normal; /* Normal wrapping of items */
+}
+
+/* Scrollable on mobile screens */
+@media (max-width: 768px) {
+    .scrollable-container {
+        overflow-x: auto; /* Enables horizontal scroll on mobile */
+        white-space: nowrap; /* Keeps children in a single row */
+        padding: 0 16px; /* Adds padding for a better scrollable area on mobile */
+    }
 }
 
 .flexMostPopularMoviesContainer {
@@ -100,6 +110,7 @@
 .card {
     min-width: 200px; /* Adjusts to ensure cards have a minimum width */
     flex-shrink: 0; /* Prevents cards from shrinking */
+   
 }
         </style>
     </head>
@@ -192,8 +203,6 @@
 </header>
 
 <section>
-    
-
 <div class="flexContinueWatchingContainer">
     <div class="container">
         <h1>Continue Watching</h1>
