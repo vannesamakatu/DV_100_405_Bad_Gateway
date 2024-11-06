@@ -50,7 +50,7 @@ Contributions are what make the open source community such an amazing place to b
 
 * **Nastasya Brink** - * Homepage & About Us * - [NastasyaBrink](https://github.com/NastasyaBrink)
 * **David Golding** - * Library Page & Debugging* - [DavidGolding](https://github.com/DavidGolding200238)
-* **Vannesa Makatu** - * Individual Movie Page & Github Setup * - [VanessaMakatu](https://github.com/vannesamakatu)
+* **Vannesa Makatu** - * Individual Movie Page & Github Setup * - [VannesaMakatu](https://github.com/vannesamakatu)
 * **Rikus Pretorius** - * Movie Watchlist Page & Debugging * - [RikusPretorius](https://github.com/wrapperik)
 * **Imelda Van Staden** - * Sign In / Sign Up Page & Navigation Bar & Footer* - [ImeldaVanStaden](https://github.com/1Christel)
 
