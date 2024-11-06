@@ -111,7 +111,30 @@
     min-width: 200px; /* Adjusts to ensure cards have a minimum width */
     flex-shrink: 0; /* Prevents cards from shrinking */
    
+
 }
+
+/* Style for dropdown content */
+.dropdown {
+    position: relative; /* Set dropdown container to relative positioning */
+}
+
+.dropdown-content {
+    position: absolute;
+    top: -100%; /* Position above the trigger */
+    left: 0;
+    z-index: 10; /* Ensure dropdown content is on top */
+    background-color: white; /* Adjust background color as needed */
+    border: 1px solid #ddd; /* Optional: border for better visibility */
+    padding: 10px;
+    display: none; /* Initially hidden */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show content on hover */
+}
+
+
         </style>
     </head>
 <body>
@@ -133,6 +156,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./Pages/watchlist.html">My List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Pages/about.html">About us</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -145,7 +171,7 @@
                 <div class="carousel-item active">
                     <img src="../assets/Images/Godzille&Kong.png" alt="Image 1">
                     <div class="overlay_text_header">
-                        Name:
+                        Name: Godzilla x Kong: The New Empire
                         <br>
                         Adam Wingard
                         <br>
@@ -213,7 +239,7 @@
         <img src="../assets/Images/Beetlejuice.png" class="card-img" alt="...">
         <div class="flexIconsContainer">
         <a href="" target="individual_movies_page"><ion-icon name="information-circle-outline"></ion-icon></a> <!--LOOK AT THIS BEFORE HAND IN!!! THIS MUST TAKE THE USER TO THE INDIVIDUAL MOVIES PAGE-->
-        
+    
         <div class="dropdown">
             <ion-icon name="ellipsis-vertical"></ion-icon> <!--filled-->
             <div class="dropdown-content">
@@ -238,6 +264,7 @@
           </div>
       </div>
     </div>
+
 
       <div class="card">
         <img src="../assets/Images/BeetlejuiceBeetlejuice.png" class="card-img" alt="...">
@@ -297,6 +324,7 @@
             </div>
           </div>
       </div>
+    
       </div>
 
       <div class="card">
@@ -333,6 +361,9 @@
     </div>
 </div>
 </div>
+
+</div>
+
 </section>
 
     
@@ -415,8 +446,8 @@
             <!-- Right Links Section -->
             <div class="col-12 col-md-4">
                 <nav class="nav justify-content-center justify-content-md-start">
-                    <a class="nav-link text-white" href="">About</a>
-                    <a class="nav-link text-white" href="">Legal</a>
+                    <a class="nav-link text-white" href="./Pages/about.html">About</a>
+                    <a class="nav-link text-white" href="https://developer.themoviedb.org/reference/intro/getting-started">Legal</a>
                     <a class="nav-link text-white" href="./Pages/signin.html">Sign Out</a>
                 </nav>
             </div>

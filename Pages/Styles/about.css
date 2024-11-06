@@ -1,0 +1,375 @@
+body {
+    background-color: #000000; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+/* General fix to ensure all elements respect screen boundaries */
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-left: 90px;
+    color: white;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 22px;
+    padding-left: 0px;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    padding: 20px;
+}
+  
+.roboto-bold-white {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    color: white;
+}
+
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 400px;
+  font-style: normal;
+  color: white;
+  align-items: flex-start;
+  margin-right: 30px;
+  margin-left: 80px;
+  margin-right: 0px;
+}
+
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 400px;
+    font-style: normal;
+    color: white;
+    align-items: flex-start;
+    margin: 40px;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.text_about_page {
+    font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin-top: 150px;
+}
+
+.text_about_cards {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.about_heading1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    justify-content: center;
+    margin-left: 685px;
+    color: #000000;
+    padding-top: 40px;
+}
+
+.about_heading2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    justify-content: center;
+    margin-left: 500px;
+    color: #000000;
+    padding-top: 40px;
+}
+
+
+.flexAboutHeadingContainer1{
+    background-color: limegreen;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.flexAboutHeadingContainer2{
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.flexAboutContainer1{
+    display: flex;
+    flex-direction: row;
+    width: 100%px;
+    height: 600px;
+    background-color: white;
+}
+
+.flexAboutContainer2{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 20px;
+}
+
+.flexAboutContainer3{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px;
+}
+
+.flexAboutContainer4{
+    display: flex;
+    flex-direction: row;
+    width: 100%px;
+    height: 500px;
+    background-color: limegreen;
+}
+
+.flexAboutContainer5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 40px;
+    margin-left: 56px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.flexAboutContainer7{
+    display: flex;
+    flex-direction: row;
+    width: 100%px;
+    height: 460px;
+    background-color: white;
+}
+
+.flexAboutContainer8{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+    background-color: white;
+}
+
+.flexAboutContainer9{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 20px;
+}
+
+.flexAboutContainer10{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px;
+}
+
+.flexAboutContainer11{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+    background-color: limegreen;
+}
+
+.flexAboutTeamMemberPng1 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: auto;
+}
+
+.flexAboutName1 {
+    margin-top: 10px;
+}
+
+.flexAboutTeamMemberPng2 {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    margin-bottom: 45px;
+}
+
+.flexAboutName2 {
+    margin-top: 15px;
+}
+
+.flexAboutTeamMemberPng3 {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    margin-top: 5px;
+}
+
+.flexAboutName3 {
+    margin-top: 50px;
+}
+
+.flexAboutTeamMemberPng4 {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.flexAboutName4 {
+    margin-top: 30px;
+}
+
+.flexAboutTeamMemberPng5 {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    height: 300px;
+    margin-bottom: 55px;
+}
+
+.flexAboutItem6 {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+}
+
+.flexAboutItem7 {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    margin-left: 70px;
+    margin-top: 160px;
+}
+
+.flexAboutItem8 {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    margin-left: 70px;
+    margin-top: 80px;
+}
+
+.flexAboutItem8 img {
+    border-radius: 10px;
+}
+
+.flexAboutItem9 {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    margin-left: 70px;
+    margin-top: 80px;
+}
+
+.flexAboutItem9 img {
+    border-radius: 10px;
+}
+
+.flexAboutItem10 {
+    margin-right: 100px;
+}
+
+/*Accordion.................................................................................................................................................................................................*/
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 536px;
+  border: none;
+  margin-left: 500px;
+  text-align: left;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  transition: 0.4s;
+  border-bottom: 1px solid #444; /* Stroke */
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    width: 536px;
+    border: none;
+    margin-left: 500px;
+    display: block;
+    overflow: hidden;
+    background-color: white;
+    transition: max-height 0.2s ease-out;
+  }
+
+.flexAccordianContainer .panel {
+    position: relative;
+    z-index: 10; /* This will ensure the accordion panel is above other content */
+    overflow: hidden; /* Ensure no content spills out initially */
+    transition: max-height 0.3s ease-out;
+}
+
+.flexAccordianContainer .accordion {
+    position: relative;
+    z-index: 10; /* This will ensure the accordion panel is above other content */
+    overflow: hidden; /* Ensure no content spills out initially */
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion.active {
+    position: relative;
+    z-index: 10; /* Make sure the button itself also has a higher z-index */
+}
+
+
+.flexPanelContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexPanelItem1 {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.flexPanelItem2 {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
